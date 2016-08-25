@@ -9,7 +9,12 @@ from django.views.decorators.csrf import csrf_exempt
 @csrf_exempt
 def callback(request):
     data = request.POST
-    print data
+    result = data["result"]
+    for i in result:
+        content = i["content"]
+        text = content["text"]
+        print text
+        
     return HttpResponse('')
 
 
