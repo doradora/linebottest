@@ -34,14 +34,13 @@ def sendTextMessage(sender, text):
         "to":sender,
         "toChannel":1383378250,
         "eventType":"138311608800106203",
-        "content":{}
+        "content":{
+            "contentType": 1,
+            "toType": 1,
+            "text": text,
+        }
     }
-    content = data['content']
-    content["contentType"]=1,
-    content["toType"] = 1,
-    content["text"] = text
-    print data,"<====data"
-    r = requests.post("https://trialbot-api.line.me/v1/events", data=data, headers=headers)
+    r = requests.post("https://trialbot-api.line.me/v1/events", data=json.dumps(data) , headers=headers)
     print r.content,"<====content"
   # const data = {
   #   to: [sender],
