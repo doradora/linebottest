@@ -17,6 +17,7 @@ def callback(request):
             content = i["content"]
             text = content["text"]
             user = content["from"]
+            print user,"<====from"
             sendTextMessage([user], "幹死你")
     return HttpResponse('')
 
@@ -39,7 +40,9 @@ def sendTextMessage(sender, text):
     content["contentType"]=1,
     content["toType"] = 1,
     content["text"] = text
+    print data,"<====data"
     r = requests.post("https://trialbot-api.line.me", data=data, headers=headers)
+    print r.content,"<====content"
   # const data = {
   #   to: [sender],
   #   toChannel: 1383378250,
