@@ -41,7 +41,7 @@ def sendTextMessage(sender, text):
     content["toType"] = 1,
     content["text"] = text
     print data,"<====data"
-    r = requests.post("https://trialbot-api.line.me", data=data, headers=headers)
+    r = requests.post("https://trialbot-api.line.me/v1/events", data=data, headers=headers)
     print r.content,"<====content"
   # const data = {
   #   to: [sender],
