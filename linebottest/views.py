@@ -17,7 +17,7 @@ def callback(request):
             content = i["content"]
             text = content["text"]
             user = content["from"]
-            print user,"<====from"
+            print content["contentMetadata"],"<====contentMetadata"
             sendTextMessage([user], "幹死你")
     return HttpResponse('')
 
