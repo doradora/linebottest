@@ -10,5 +10,6 @@ from django.views.decorators.csrf import csrf_exempt
 def callback(request):
     data = request.POST
     print data
+    return HttpResponse('')
 
 
